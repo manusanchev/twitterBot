@@ -78,7 +78,7 @@ function sendFrase(autoenviar, tweet){
     let rawdata = fs.readFileSync('frases.json');
     let frases = JSON.parse(rawdata);
     let frase = frases[Math.round(Math.random() * ((frases.length-1) - 0))];
-    console.log(frase);
+
     if(autoenviar){
         T.post('statuses/update', { 
             status: `@${tweet.user.screen_name + " " + frase}  `,
